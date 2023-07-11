@@ -26,3 +26,7 @@ class TestUser(unittest.TestCase):
         """resets FileStorage data to original state."""
         self.resetStorage()
         pass
+
+    def resetStorage(self):
+        """Resets FIleStorage data."""
+        FileStorage._FileStorage__objects = {}
