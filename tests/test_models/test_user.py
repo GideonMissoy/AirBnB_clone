@@ -31,7 +31,7 @@ class TestUser(unittest.TestCase):
         """Resets FIleStorage data."""
         FileStorage._FileStorage__objects = {}
         if os.path.isfile(FileStorage._FileStorage__file_path):
-            os.remove(FileStorage._FileStorage__file_path_
+            os.remove(FileStorage._FileStorage__file_path)
 
     def test_8_instantiation(self):
         """tests instantiation of the class User."""
