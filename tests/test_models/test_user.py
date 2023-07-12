@@ -30,3 +30,23 @@ class TestUser(unittest.TestCase):
     def resetStorage(self):
         """Resets FIleStorage data."""
         FileStorage._FileStorage__objects = {}
+        if os.path.isfile(FileStorage._FileStorage__file_path):
+            os.remove(FileStorage._FileStorage__file_path_
+
+    def test_8_instantiation(self):
+        """tests instantiation of the class User."""
+        u = User()
+        self.assertEqual(str(type(u)), "<class 'models.user.User'>")
+        self.assertIsInstance(u, User)
+        self.assertTrue(issubclass(type(u), BaseModel))
+
+    def test_8_attributes(self):
+        """tests the attributes of the class User():"""
+        attributes = storage.attibutes()["User"]
+        newuser = User()
+        for m, t in attributes.items():
+            self.assertTrue(hasattr(newuser, t))
+            self.assertEquall(type(getattr(newuser, t, None)), t
+
+if __name__ == "__main__":
+    unittest.main()
