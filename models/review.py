@@ -4,9 +4,9 @@ from models.base_model import BaseModel
 
 class Review(BaseModel):
     """
-        place_id (str): Is the Place id.
+        place_id (str): Place id.
         user_id (str): User id.
-        text (str): Is the text of the review.
+        text (str): text of the review.
     """
 
     place_id = ""

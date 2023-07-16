@@ -4,10 +4,10 @@ from models.base_model import BaseModel
 
 class User(BaseModel):
     """
-        email(str): email of user.
-        password(str): password of user.
-        first_name(str):  first name of user.
-        last_name(str): last name of  user.
+        email(str): email of the user.
+        password(str): password of the user.
+        first_name(str): first name of user.
+        last_name(str): last name of user.
     """
 
     email = ""

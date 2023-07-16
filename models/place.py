@@ -1,22 +1,20 @@
 #!/usr/bin/python3
-"""
-Place class
-"""
+"""Place class."""
 from models.base_model import BaseModel
 
-class City(BaseModel):
+class Place(BaseModel):
     """
-        city_id (str): City id.
-        user_id (str): User id.
-        name (str): place name
-        description (str): place description
-        number_rooms (int): number of rooms
-        number_bathrooms (int): number of bathrooms
-        max_guest (int): maximum number of guests
-        price_by_night (int): price by night of place.
-        latitude (float): latitude of place.
-        longitude (float): longitude of place.
-        amenity_ids (list): list of Amenity ids.
+        city_id(str): City id.
+        user_id(str): User id.
+        name(str): name of the place.
+        description(str): place description
+        number_rooms(int): number of rooms of the place.
+        number_bathrooms(int): number of bathrooms of the place.
+        max_guest(int): max number of guests of the place.
+        price_by_night(int): price by night of the place.
+        latitude(float): latitude of the place.
+        longitude(float): longitude of the place.
+        amenity_ids(list): list of Amenity ids.
     """
 
     city_id = ""
