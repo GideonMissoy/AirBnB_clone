@@ -1,5 +1,7 @@
 This is our directory for the ALX projects 'The AirBnB console.'
 
+![](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/263/HBTN-hbnb-Final.png)
+
 This directory is meant to expound and improve understanding on:
 - How to create a Python package.
 - How to create a command interpreter in Python using the cmd module.
