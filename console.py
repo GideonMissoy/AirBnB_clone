@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-Defines the HBnB console.
-"""
-
+"""Defines the HBnB console."""
 import cmd
 import re
 from shlex import split
@@ -35,7 +32,7 @@ def parse(arg):
 
 
 class HBNBCommand(cmd.Cmd):
-    """Defines the class HBNBCommand():"""
+    """Defines the HBnBcommand()"""
     prompt = "(hbnb) "
     __classes = {
         "BaseModel",
@@ -48,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def emptyline(self):
-        """Do nothing upon receiving an empty line."""
+        """Do nothing after receiving an empty line"""
         pass
 
     def default(self, arg):
@@ -67,16 +64,17 @@ class HBNBCommand(cmd.Cmd):
             if match is not None:
                 command = [argl[1][:match.span()[0]], match.group()[1:-1]]
                 if command[0] in argdict.keys():
-                                   return argdict[command[0]](call)
+                    call = "{} {}".format(argl[0], command[1])
+                    return argdict[command[0]](call)
         print("*** Unknown syntax: {}".format(arg))
         return False
 
     def do_quit(self, arg):
-        """Quit command to exit the program."""
+        """Quit command to exit program."""
         return True
 
     def do_EOF(self, arg):
-        """EOF signal to exit the program."""
+        """EOF signal to exit program."""
         print("")
         return True
 
@@ -95,7 +93,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """Usage: show <class> <id> or <class>.show(<id>)
-        Display the string representation of a class instance of a given id.
+        Display the string rep of a class instance of a given id.
         """
         argl = parse(arg)
         objdict = storage.all()
@@ -112,13 +110,16 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
         """Usage: destroy <class> <id> or <class>.destroy(<id>)
-        Delete a class instance of a given id."""
+        Delete a class instance of given id."""
         argl = parse(arg)
         objdict = storage.all()
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in HBNBCommand.__classes:
-            print("** class doesn" elif "{}.{}".format(argl[0], argl[1]) not in objdict.keys():
+            print("** class doesn't exist **")
+        elif len(argl) == 1:
+            print("** instance id missing **")
+        elif "{}.{}".format(argl[0], argl[1]) not in objdict.keys():
             print("** no instance found **")
         else:
             del objdict["{}.{}".format(argl[0], argl[1])]
@@ -126,7 +127,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """Usage: all or all <class> or <class>.all()
-        Display string representations of all instances of a given class.
+        Shows string rep of all instances of a given class.
         If no class is specified, displays all instantiated objects."""
         argl = parse(arg)
         if len(argl) > 0 and argl[0] not in HBNBCommand.__classes:
@@ -163,7 +164,8 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
             return False
         if argl[0] not in HBNBCommand.__classes:
-           return False
+            print("** class doesn't exist **")
+            return False
         if len(argl) == 1:
             print("** instance id missing **")
             return False
