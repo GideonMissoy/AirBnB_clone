@@ -14,7 +14,7 @@ from models.amenity import Amenity
 
 
 class TestAmenity_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of Amenity class."""
+    """Unittests for testing instantiation of the Amenity class."""
 
     def test_no_args_instantiates(self):
         self.assertEqual(Amenity, type(Amenity()))
@@ -85,7 +85,7 @@ class TestAmenity_instantiation(unittest.TestCase):
 
 
 class TestAmenity_save(unittest.TestCase):
-    """Unittests for testing save method of Amenity class."""
+    """Unittests for testing save method of the Amenity class."""
 
     @classmethod
     def setUp(self):
